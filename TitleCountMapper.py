@@ -22,8 +22,8 @@ regexPattern = '|'.join(map(re.escape, open(delimitersPath).readlines()))
     # TODO
 
 for line in sys.stdin:
-	line = re.split(regexPattern, line)
-	line = removeStopwords( [x.lower() for x in line], open(delimitersPath).readlines())
+	words = re.split(regexPattern, line)
+	words = removeStopwords( [x.lower() for x in words], open(delimitersPath).readlines())
 	
 	counts = collections.Counter(words).most_common()
 	
