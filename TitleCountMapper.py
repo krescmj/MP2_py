@@ -16,10 +16,6 @@ delimitersPath = sys.argv[2]
 def removeStopwords(wordlist, stopwords):
     return [w for w in wordlist if w not in stopwords]
 
-
-
-
-
 #TODO 
 #with open(delimitersPath) as f:
 regexPattern = '|'.join(map(re.escape, open(delimitersPath).readlines()))
@@ -33,8 +29,8 @@ for line in sys.stdin:
 	#result = dict()
 	#for x in range(0, len(counts)):
 	#	result.ap
-	
-	return counts
+	sys.stdout.write(counts)
+	#return counts
 	
     # TODO
 
