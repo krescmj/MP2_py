@@ -21,16 +21,20 @@ def removeStopwords(wordlist, stopwords):
 regexPattern = '|'.join(map(re.escape, open(delimitersPath).readlines()))
     # TODO
 
+all_words = list()
 for line in sys.stdin:
+	line = line.strip()
 	words = re.split(regexPattern, line)
-	words = removeStopwords( [x.lower() for x in words], open(delimitersPath).readlines())
+	all_words.append(removeStopwords( [x.lower() for x in words], open(delimitersPath).readlines()))
 	
-	counts = collections.Counter(words).most_common()
+counts = collections.Counter(all_words).most_common()
 	
 	#result = dict()
 	#for x in range(0, len(counts)):
 	#	result.ap
-	sys.stdout.write(counts)
+	
+for item in counts:
+	sys.stdout.write('%s\t%s\n' % (item[0], item[1]))
 	#return counts
 	
     # TODO
