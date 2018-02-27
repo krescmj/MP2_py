@@ -27,7 +27,7 @@ all_words = list()
 for line in sys.stdin:
 	line = line.strip()
 	words = re.split(regexPattern, line)
-	all_words = all_words + (removeStopwords( [x.lower() for x in words], open(delimitersPath).readlines()))
+	all_words = all_words + (removeStopwords( [x.lower() for x in words], open(stopWordsPath).readlines()))
 	
 counts = collections.Counter(all_words).most_common()
 	
