@@ -22,10 +22,12 @@ regexPattern = '|'.join(map(re.escape, open(delimitersPath).readlines()))
     # TODO
 
 all_words = list()
+#test = "sdafsad,sdafsda"
+#for line in test:
 for line in sys.stdin:
 	line = line.strip()
 	words = re.split(regexPattern, line)
-	all_words.append(removeStopwords( [x.lower() for x in words], open(delimitersPath).readlines()))
+	all_words = all_words + (removeStopwords( [x.lower() for x in words], open(delimitersPath).readlines()))
 	
 counts = collections.Counter(all_words).most_common()
 	
