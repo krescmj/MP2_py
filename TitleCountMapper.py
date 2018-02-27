@@ -26,7 +26,7 @@ regexPattern = '|'.join(map(re.escape, delimiters))
 
 all_words = list()
 
-for line in open(sys.argv[3]):
+for line in sys.stdin:
 	line = line.strip()
 	words = filter(None, re.split(regexPattern, line))
 	all_words = all_words + removeStopwords( [x.lower() for x in words], stopwords)
