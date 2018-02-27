@@ -51,6 +51,6 @@ ret = ret + temp
 ret = ret[0:10]
 
 #for word in ret:
-for x in range(0, len(ret)):
-	word = ret[len(ret)-x]
+for x in range(len(ret)-1,0,-1):
+	word = ret[x]
 	sys.stdout.write('%s\t%s\n' % (word, word_counts[word]))
