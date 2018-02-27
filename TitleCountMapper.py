@@ -28,8 +28,8 @@ all_words = list()
 
 for line in open(sys.argv[3]):
 	line = line.strip()
-	words = re.split(regexPattern, line)
-	all_words = all_words + (removeStopwords( [x.lower() for x in words], stopwords))
+	words = filter(None, re.split(regexPattern, line))
+	all_words = all_words + removeStopwords( [x.lower() for x in words], stopwords)
 
 counts = collections.Counter(all_words).most_common(10)
 	
