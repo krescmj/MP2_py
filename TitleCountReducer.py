@@ -40,7 +40,7 @@ for x in range(1, len(counts)):
 		temp.append(counts[x][0])
 		temp.sort()
 	else:
-		if x > 19:
+		if x > 9:
 			break
 		
 		ret = ret + temp
@@ -48,7 +48,7 @@ for x in range(1, len(counts)):
 		temp_count = counts[x][1]
 
 ret = ret + temp
-ret = ret[0:20]
+ret = ret[0:10]
 
 for word in ret:
-	sys.stdout.write('%s\t%s\n' % (word, counts[word]))
+	sys.stdout.write('%s\t%s\n' % (word, word_counts[word]))
