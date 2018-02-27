@@ -31,6 +31,8 @@ if current_word == word:
 	
 counts = word_counts.most_common()
 
+ret = []
+
 temp = [counts[0][0]]
 temp_count = counts[0][1]
 for x in range(1, len(counts)):
