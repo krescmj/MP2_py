@@ -21,13 +21,13 @@ for line in sys.stdin:
 	else:
 		if current_word:
 			#sys.stdout.write('%s\t%s\n' % (current_word, current_count))
-			word_counts.update(current_word=current_count)
+			word_counts.update([current_word,current_count])
 		current_count = count
 		current_word = word
 
 if current_word == word:
     #sys.stdout.write('%s\t%s\n' % (current_word, current_count))
-	word_counts.update(current_word=current_count)
+	word_counts.update([current_word,current_count])
 	
 counts = word_counts.most_common()
 
