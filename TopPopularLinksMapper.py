@@ -1,14 +1,21 @@
 #!/usr/bin/env python
-import sys
+import sys, operator
 
-
-# TODO
-
-
+value_list = list()
 
 for line in sys.stdin:
 
-       #TODO
+	line = line.strip()
+	link, count = line.split('\t', 1)
+	
+	try:
+		count = int(count)
+	except ValueError:
+		continue
+		
+	value_list.append([link, count])
+	
+value_list = sorted(value_list, key=operator.itemgetter(1,0))
 
-
-#TODO
+for item in value_list[-10:]:
+	sys.stdout.write('%s\t%s\n' % (item[0], item[1]))
