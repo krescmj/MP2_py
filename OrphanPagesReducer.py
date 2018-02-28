@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import sys
 
-orphan_set = dict()
+orphan_set = set()
 norphan_set = set()
 
 for line in sys.stdin:
@@ -15,6 +15,8 @@ for line in sys.stdin:
 		norphan_set.add(page)
 		
 orphans = orphan_set - norphan_set
+
+orphans = sorted(orphans)
 
 for orphan in orphans:		
 	sys.stdout.write('%s\n' % (orphan))
