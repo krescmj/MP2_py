@@ -31,8 +31,10 @@ for line in sys.stdin:
 	words = filter(None, re.split(regexPattern, line))
 	all_words = all_words + removeStopwords( [x.lower() for x in words], stopwords)
 
-counts = collections.Counter(all_words).most_common()
+#counts = collections.Counter(all_words).most_common()
 	
-for item in counts:
-	sys.stdout.write('%s\t%s\n' % (item[0], item[1]))
+#for item in counts:
+#	sys.stdout.write('%s\t%s\n' % (item[0], item[1]))
+for item in all_words:
+	sys.stdout.write('%s\t%s\n' % (item, all_words[item]))
 
