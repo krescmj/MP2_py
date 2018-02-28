@@ -28,5 +28,5 @@ if current_word == word:
 	
 value_list = sorted(value_list, key=operator.itemgetter(1,0))
 
-for item in value_list[-10:]:
+for item in sorted(value_list[-10:], key=operator.itemgetter(0)):
 	sys.stdout.write('%s\t%s\n' % (item[0], item[1]))
