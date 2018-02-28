@@ -6,7 +6,7 @@ link_id_set = set()
 for line in sys.stdin:
 
 	line = line.strip()
-	page, links = line.split(':', 1)
+	page, links = line.split(': ', 1)
 	
 	page_id_set.add(page)
 	
