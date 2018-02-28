@@ -18,5 +18,5 @@ orphans = orphan_set - norphan_set
 
 orphans = sorted(orphans)
 
-for orphan in orphans:		
+for orphan in orphans[-10:]:		
 	sys.stdout.write('%s\n' % (orphan))
