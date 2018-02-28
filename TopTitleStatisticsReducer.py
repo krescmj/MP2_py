@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-import sys, math
+import sys
 
 sum = 0
 minimum = None
@@ -32,7 +32,7 @@ mean = sum/len(counts)
 
 var_sum = 0
 for count in counts:
-	var_sum += math.pow(count - mean, 2)
+	var_sum += ((count - mean) ** 2)
 	
 variance = var_sum/len(counts)
 
