@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-import sys
+import sys, operator
 
 orphan_set = set()
 norphan_set = set()
@@ -18,5 +18,5 @@ orphans = orphan_set - norphan_set
 
 orphans = sorted(orphans)
 
-for orphan in orphans[-10:]:		
+for orphan in orphans:		
 	sys.stdout.write('%s\n' % (orphan))
