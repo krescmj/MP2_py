@@ -19,7 +19,7 @@ orphans = page_id_set - link_id_set
 not_orphans = page_id_set & link_id_set
 
 for orphan in orphans:		
-	sys.stdout.write('o:%s\n' % (orphan))
+	sys.stdout.write('o\t%s\n' % (orphan))
 	
 for not_orphan in not_orphans:
-	sys.stdout.write('n:%s\n' % (not_orphan))
+	sys.stdout.write('n\t%s\n' % (not_orphan))
