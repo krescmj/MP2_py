@@ -13,10 +13,15 @@ for line in sys.stdin:
 	
 page_list = sorted(page_list, key=operator.itemgetter(1,0))
 page_list = list(reversed(sorted(page_list[-10:], key=operator.itemgetter(0))))
+rank_list = sorted(page_list, key=operator.itemgetter(1,0))
 
-rank_list = sorted(page_list, key=operator.itemgetter(0,1))
+for item in page_list:
 
-for x in range(0, len(page_list)):
-	
-	item = page_list[x]
-	sys.stdout.write('%s\t%s\n' % (item[0], rank_list.index(item)))
+	rank = rank_list.index(item)
+
+	for x in range(rank-1, -1, -1):
+		test_item = rank_list[x]
+		if item[1] == test_item[1]:
+			rank = x
+			
+	sys.stdout.write('%s\t%s\n' % (item[0], rank))
