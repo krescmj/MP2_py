@@ -23,6 +23,3 @@ for line in sys.stdin:
 	if page in league_list:
 		sys.stdout.write('%s\t%s\n' % (page, count))
 		league_list.remove(page)
-
-for page in league_list:
-	sys.stdout.write('%s\t%s\n' % (page, 0))
