@@ -9,10 +9,8 @@ for line in sys.stdin:
 	line = line.strip()
 	page, count = line.split('\t', 1)
 	
-	page_list.append([page, count])
+	page_list.append([page, int(count)])
 	
-#page_list = sorted(page_list, key=operator.itemgetter(1,0))
-#page_list = list(reversed(sorted(page_list[-10:], key=operator.itemgetter(0))))
 page_list = list(reversed(sorted(page_list, key=operator.itemgetter(0))))
 rank_list = sorted(page_list, key=operator.itemgetter(1,0))
 
