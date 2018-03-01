@@ -7,7 +7,7 @@ norphan_set = set()
 for line in sys.stdin:
 	line = line.strip()
 	
-	marker, page = line.split(':',1)
+	marker, page = line.split('\t',1)
 	
 	if marker == 'o':
 		if page not in norphan_set:
