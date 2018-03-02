@@ -16,10 +16,10 @@ for line in sys.stdin:
 		link_id_set.add(link)
 
 orphans = page_id_set - link_id_set
-not_orphans = page_id_set & link_id_set
+#not_orphans = page_id_set & link_id_set
 
 for orphan in orphans:		
 	sys.stdout.write('o\t%s\n' % (orphan))
 	
-for not_orphan in not_orphans:
+for not_orphan in link_id_set:
 	sys.stdout.write('n\t%s\n' % (not_orphan))
