@@ -10,13 +10,14 @@ for line in sys.stdin:
 	marker, page = line.split('\t',1)
 	
 	if marker == 'o':
-		if page not in norphan_set:
-			orphan_set.add(page)
-	else:
-		if page in orphan_set:
-			orphan_set.remove(page)
+#		if page not in norphan_set:
+		orphan_set.add(page)
+	elif marker == 'n':
+		#if page in orphan_set:
+		#	orphan_set.remove(page)
 		norphan_set.add(page)
 
+orphans = orphan_set - norphan_set
 orphans = sorted(orphan_set)
 
 for orphan in orphans:		
