@@ -5,6 +5,7 @@ orphan_set = set()
 norphan_set = set()
 
 for line in sys.stdin:
+	sys.stdout.write('%s', % (sys.stdin)
 	line = line.strip()
 	
 	marker, page = line.split('\t',1)
